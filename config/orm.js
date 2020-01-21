@@ -43,7 +43,7 @@ var orm = {
         });
     },
 
-    read: function (table, cb){
+    viewAllTasks: function (table, cb){
         var dbQuery = "SELECT * FROM " + table + ";";
 
         console.log(dbQuery);
@@ -74,4 +74,4 @@ var orm = {
     }
 };
 
-module.expores
+module.exports = orm;

@@ -14,7 +14,7 @@ var task = require("../models/task.js");
   });
   
   router.get("/", function(req, res) {
-    task.read(function(data) {
+    task.viewAllTasks(function(data) {
       var HBObject = {
         tasks: data
       };

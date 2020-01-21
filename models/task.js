@@ -7,8 +7,8 @@ var task = {
         });
     },
 
-    read: function(cb) {
-        orm.read("tasks", function(res){
+    viewAllTasks: function(cb) {
+        orm.viewAllTasks("tasks", function(res){
             cb(res);
         });
     },

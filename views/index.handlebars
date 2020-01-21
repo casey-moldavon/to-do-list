@@ -7,9 +7,9 @@
 
         <form class="create-form">
             <div class="form-group">
-                <label for="newtask">Create new Task</label>
-                <input type="text" id="newtask" name="task">
-                <button type="submit" class="btn btn-success" id="addtask">
+                <label for="newTask">Create new Task</label>
+                <input type="text" id="newTask" name="task">
+                <button type="submit" class="btn btn-success" id="add-task">
                     <span class="fa fa thumbs-up"></span>
                 </button>
             </div>
@@ -20,16 +20,17 @@
     <div class="row">
         <div class="col-sm-6">
             <div class="panel panel-default">
-                <div class="panek-body">
+                <div class="panel-body">
 
                     <ul>
                         {{#each tasks}}
                             {{#unless completed}}
                                 <span><strong> {{this.id}} - {{this.task}}</strong></span>
+                                <button type="button" class="complete-task" id="complete" data-id="{{this.id}}"
+                                data-newCompleted={{complete}}><span></span></button>
                             {{/unless}}
                         {{/each}}
                     </ul>
-
 
                 </div>
             </div>
@@ -39,7 +40,17 @@
             <div class="panel panel-default">
                 <div class="panel-heading" id="rightside"><strong>Complete the Task</strong></div>
                 <div class="panel-body">
-                    <h4>add content here</h4>
+
+                    <ul>
+                        {{#each tasks}}
+                            {{#if completed}}
+                                <span><strong> {{this.id}} - {{this.task}}</strong></span>
+                                <button type="button" class="forget-task" id="forget" data-id="{{this.id}}"
+                                data-newCompleted={{complete}}><span class="forgotten"></span></button>
+                            {{/if}}
+                        {{/each}}
+                    </ul>
+  
                 </div>
             </div>
         </div>

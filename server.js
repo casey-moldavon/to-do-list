@@ -1,7 +1,6 @@
 var express = require("express");
 var exphbs = require("express-handlebars");
-// var mysql = require("mysql");
-var routes = require("./controllers/controller.js");
+var routes = require("./controllers/taskController.js");
 
 var app = express();
 var PORT = process.env.PORT || 8080;
