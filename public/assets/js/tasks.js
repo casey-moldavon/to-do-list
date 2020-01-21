@@ -1,5 +1,3 @@
-var orm = require("../config/orm.js");
-
 $(function() {
     $(".create-form").on("submit", function(event){
         event.preventDefault();
@@ -10,7 +8,6 @@ $(function() {
             .trim(),
             completed: 0
         };
-
         $.ajax("/api/tasks", {
             type: "POST",
             data: newTask
@@ -21,8 +18,10 @@ $(function() {
         });
     });
 
+
+
     $(".complete-task").on("click", function(event){
-        event.preventDefault();
+        // event.preventDefault();
 
         var id = $(this).data("id");
         var completeStatus = {
@@ -32,19 +31,23 @@ $(function() {
             type: "PUT",
             data: completeStatus
         }).then(function(){
-            console.log("Task COMPLETE!");
+            console.log("Task COMPLETE!", completeStatus);
             location.reload();
         });
     });
+
+
     
     $(".forget-task").on("click", function(event){
-        event.preventDefault();
+        // event.preventDefault();
 
         var id = $(this).data("id");
 
-        $.ajax({
-            type: "DELETE",
-            url: "/api/tasks/" + id
-        }).then(location.reload());
+        $.ajax( "/api/tasks/" + id, {
+            type: "DELETE"
+        }).then(function(){
+            console.log("Forgotten task", id);
+            location.reload();
+        });
     });
 });

@@ -27,6 +27,9 @@ function objectToSql(object){
     return array.toString();
 }
 
+
+
+
 // =========================                ==================================================
 // ========================= CRUD Functions ==================================================
 // =========================                ==================================================
@@ -34,11 +37,11 @@ var orm = {
 
     //Brain method of CRUD functions
     create: function(table, cols, vals, cb){
-        var dbQuery = "INSERT INTO " + table + "(" + cols.toString() + ") " + "VALUES (" + createQmarks(vals.length) + ") ";
+        var dbQuery = "INSERT INTO " + table + " (" + cols.toString() + ") " + "VALUES (" + createQmarks(vals.length) + ") ";
 
         console.log(dbQuery);
         connection.query(dbQuery, function(err, res){
-            if (err) throw err;
+            if (err) {throw err;}
             cb(res);
         });
     },
@@ -48,7 +51,7 @@ var orm = {
 
         console.log(dbQuery);
         connection.query(dbQuery, function(err, res){
-            if (err) throw err;
+            if (err) {throw err;}
             cb(res);
         });
     },
@@ -58,17 +61,18 @@ var orm = {
 
         console.log(dbQuery);
         connection.query(dbQuery, function(err, res){
-            if (err) throw err;
+            if (err) {throw err;}
             cb(res);
         });
     },
+    
 
     delete: function(table, condition, cd){
         var dbQuery = "DELETE FROM " + table + " WHERE " + condition;
 
         console.log(dbQuery);
         connection.query(dbQuery, function(err, res){
-            if (err) throw err;
+            if (err) {throw err;}
             cb(res);
         });
     }
