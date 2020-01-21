@@ -1,4 +1,4 @@
-const connection = require("../config/connection");
+var connection = require("../config/connection.js");
 
 // =========================                ==================================================
 // ========================= Helper Methods ==================================================
@@ -33,7 +33,7 @@ function objectToSql(object){
 var orm = {
 
     //Brain method of CRUD functions
-    createTask: function(table, cols, vals, cb){
+    create: function(table, cols, vals, cb){
         var dbQuery = "INSERT INTO " + table + "(" + cols.toString() + ") " + "VALUES (" + createQmarks(vals.length) + ") ";
 
         console.log(dbQuery);
@@ -43,7 +43,7 @@ var orm = {
         });
     },
 
-    viewAllTasks: function (table, cb){
+    read: function (table, cb){
         var dbQuery = "SELECT * FROM " + table + ";";
 
         console.log(dbQuery);
@@ -53,7 +53,7 @@ var orm = {
         });
     },
 
-    updateTask: function(table, objColVals, condition, cd){
+    update: function(table, objColVals, condition, cd){
         var dbQuery = "UPDATE " + table + " SET " + objectToSql(objColVals) + " WHERE " + condition;
 
         console.log(dbQuery);
@@ -63,7 +63,7 @@ var orm = {
         });
     },
 
-    deleteTask: function(table, condition, cd){
+    delete: function(table, condition, cd){
         var dbQuery = "DELETE FROM " + table + " WHERE " + condition;
 
         console.log(dbQuery);
