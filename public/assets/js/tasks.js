@@ -1,23 +1,4 @@
 $(function() {
-    $(".create-form").on("submit", function(event){
-        event.preventDefault();
-
-        var newTask = {
-            task: $("#newTask")
-            .val()
-            .trim(),
-            completed: 0
-        };
-        $.ajax("/api/tasks", {
-            type: "POST",
-            data: newTask
-        }).then(function(){
-            console.log("Created new Task");
-            console.log("Gettin BUSY!");
-            location.reload();
-        });
-    });
-
 
 
     $(".complete-task").on("click", function(event){
@@ -36,6 +17,25 @@ $(function() {
         });
     });
 
+    
+    $(".create-form").on("submit", function(event){
+        event.preventDefault();
+
+        var newTask = {
+            task: $("#newTask")
+            .val()
+            .trim(),
+            completed: 0
+        };
+        $.ajax("/api/tasks", {
+            type: "POST",
+            data: newTask
+        }).then(function(){
+            console.log("Created new Task");
+            console.log("Gettin BUSY!");
+            location.reload();
+        });
+    });
 
     
     $(".forget-task").on("click", function(event){

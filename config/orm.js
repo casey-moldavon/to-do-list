@@ -17,7 +17,7 @@ function objectToSql(object){
     var array = [];
     for (var key in object){
         var value = object[key];
-        if (Object.hasOwnProprty.call(object, key)) {
+        if (Object.hasOwnProperty.call(object, key)) {
             if(typeof value === "string" && value.indexOf(" ") >= 0){
                 value = "'" + value + "'" ;
             }
@@ -35,17 +35,6 @@ function objectToSql(object){
 // =========================                ==================================================
 var orm = {
 
-    //Brain method of CRUD functions
-    create: function(table, cols, vals, cb){
-        var dbQuery = "INSERT INTO " + table + " (" + cols.toString() + ") " + "VALUES (" + createQmarks(vals.length) + ") ";
-
-        console.log(dbQuery);
-        connection.query(dbQuery, function(err, res){
-            if (err) {throw err;}
-            cb(res);
-        });
-    },
-
     viewAllTasks: function (table, cb){
         var dbQuery = "SELECT * FROM " + table + ";";
 
@@ -56,7 +45,17 @@ var orm = {
         });
     },
 
-    update: function(table, objColVals, condition, cd){
+    create: function(table, cols, vals, cb){
+        var dbQuery = "INSERT INTO " + table + " (" + cols.toString() + ") " + "VALUES (" + createQmarks(vals.length) + ") ";
+
+        console.log(dbQuery);
+        connection.query(dbQuery, function(err, res){
+            if (err) {throw err;}
+            cb(res);
+        });
+    },
+
+    update: function(table, objColVals, condition, cb){
         var dbQuery = "UPDATE " + table + " SET " + objectToSql(objColVals) + " WHERE " + condition;
 
         console.log(dbQuery);
@@ -67,7 +66,7 @@ var orm = {
     },
     
 
-    delete: function(table, condition, cd){
+    delete: function(table, condition, cb){
         var dbQuery = "DELETE FROM " + table + " WHERE " + condition;
 
         console.log(dbQuery);

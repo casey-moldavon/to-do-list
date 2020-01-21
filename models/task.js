@@ -1,16 +1,17 @@
 var orm = require("../config/orm");
 
 var task = {
-    create: function(cols, vals, cb) {
-        orm.create("tasks", cols, vals, function(res){
-            console.log("task.js: (create)" + res);
-            cb(res);
-        });
-    },
 
     viewAllTasks: function(cb) {
         orm.viewAllTasks("tasks", function(res){
             console.log("task.js: (view)" + res);
+            cb(res);
+        });
+    },
+
+    create: function(cols, vals, cb) {
+        orm.create("tasks", cols, vals, function(res){
+            console.log("task.js: (create)" + res);
             cb(res);
         });
     },

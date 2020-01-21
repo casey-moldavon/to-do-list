@@ -12,6 +12,7 @@ var router = express.Router();
       res.render("index", hbObject);
     });
 
+
   router.post("/api/tasks", function(req, res) {
     task.create([
       "task", "completed"
@@ -22,6 +23,7 @@ var router = express.Router();
     });
   });
 
+
   router.put("/api/tasks/:id", function(req, res) {
     var condition = "id = " + req.params.id;
   
@@ -31,7 +33,6 @@ var router = express.Router();
       completed: req.body.completed
     }, condition, function(result) {
       if (result.changedRows === 0) {
-        // If no rows were changed, then the ID must not exist, so 404
         return res.status(404).end();
       } else {
         res.status(200).end();
@@ -46,7 +47,6 @@ var router = express.Router();
   
     task.delete(condition, function(result) {
       if (result.changedRows === 0) {
-        // If no rows were changed, then the ID must not exist, so 404
         return res.status(404).end();
       } else {
         res.status(200).end();
@@ -54,7 +54,7 @@ var router = express.Router();
     });
   });
 });
-  // Export routes for server.js to use.
+
   module.exports = router;
 
 
