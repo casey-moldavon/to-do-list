@@ -11,14 +11,12 @@ var router = express.Router();
       console.log(hbObject);
       res.render("index", hbObject);
     });
+  });
 
 
   router.post("/api/tasks", function(req, res) {
-    task.create([
-      "task", "completed"
-    ], [
-      req.body.task, req.body.completed
-    ], function(result) {
+    task.create(
+      req.body, function(result) {
       res.json({ id: result.insertId });
     });
   });
@@ -53,7 +51,6 @@ var router = express.Router();
       }
     });
   });
-});
 
   module.exports = router;
 

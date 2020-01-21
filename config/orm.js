@@ -5,13 +5,13 @@ var connection = require("../config/connection.js");
 // =========================                ==================================================
 
 //got these functions from activity 17-CatsApp within 13-MVC
-function createQmarks(number){
-    var array = [];
-    for (var i = 0; i < number; i++){
-        array.push("?");
-    }
-    return array.toString();
-}
+// function createQmarks(number){
+//     var array = [];
+//     for (var i = 0; i < number; i++){
+//         array.push("?");
+//     }
+//     return array.toString();
+// }
 
 function objectToSql(object){
     var array = [];
@@ -26,8 +26,6 @@ function objectToSql(object){
     }
     return array.toString();
 }
-
-
 
 
 // =========================                ==================================================
@@ -45,11 +43,11 @@ var orm = {
         });
     },
 
-    create: function(table, cols, vals, cb){
-        var dbQuery = "INSERT INTO " + table + " (" + cols.toString() + ") " + "VALUES (" + createQmarks(vals.length) + ") ";
+    create: function(table, data, cb){ 
+        var dbQuery = "INSERT INTO " + table + " SET ?";
 
         console.log(dbQuery);
-        connection.query(dbQuery, function(err, res){
+        connection.query(dbQuery, data, function(err, res){
             if (err) {throw err;}
             cb(res);
         });
