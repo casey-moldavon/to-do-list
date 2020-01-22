@@ -30,7 +30,7 @@ var router = express.Router();
     task.update({
       completed: req.body.completed
     }, condition, function(result) {
-      if (result.changedRows === 0) {
+      if (result.changedRows == 0) {
         return res.status(404).end();
       } else {
         res.status(200).end();
@@ -44,7 +44,7 @@ var router = express.Router();
     console.log("condition :", condition);
   
     task.delete(condition, function(result) {
-      if (result.changedRows === 0) {
+      if (result.affectedRows == 0) {
         return res.status(404).end();
       } else {
         res.status(200).end();

@@ -1,47 +1,107 @@
 body {
-    /* background-image: url("../images/background-image.png"); */
+    background-image: url("../images/background-image.png");
     background-color: rgb(163, 222, 230);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
 
     padding: 0;
     margin: 0;
 }
 
-.col {
-    font-weight: bold;
-    font-display: center;
-}
 
 .container {
     background-color: white;
+    text-align: center;
 
-    margin-left: 20%;
-    width: 60%;
-    height: 500px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px white;
 
-    font-display: center;
-    /* border: 2px solid black; */
-    border-radius: 0.5px;
-    box-shadow: 0px 5px 5px 0px grey;
-    opacity: 8.5;
+    padding-top: 50px;
+    margin-top: 100px;
+
+    opacity: 0.9;
 }
 
+    .mini-heading {
+        font-weight: bold;
+        margin-top: 10%;
+    }
+
+    .task-container {
+        background-color: #51aee1;
+        border: 1px solid white;
+        border-radius: 5px;
+
+        font-size: 20px;
+        text-align: left;
+        overflow: scroll;
+
+        padding-top: 10px;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 10%;
+        
+        width: 80%;
+        height: 70%;
+        position: relative;
+    }
+
+    .complete-container {
+        background-color: #51aee1;
+        border: 1px solid white;
+        border-radius: 5px;
+
+        font-size: 20px;
+        text-align: left;
+        overflow: scroll;
+
+        padding-top: 10px;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 10%;
+
+        width: 80%;
+        height: 70%;
+        position: relative;
+    }
+
+        .text-row {
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 22px;
+        }
+
+            .text-span {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+            
+            .complete-task {
+                margin-left: -10px;
+                border-radius: 5px;
+            }
+
+            .forget-task {
+                margin-left: -10px;
+                border-radius: 5px;
+            }
+
 .submit {
-    padding: 10px;
-    width: 20px;
     background-color: #00ccff;
     color: white;
+    font-size: 20px;
+    font-weight: bold;
+
+    border-radius: 5px;
 }
 
 #complete {
-    padding: 10px;
-    width: 20px;
     background-color: #2bff00;
     color: white;
 }
 
 #forget {
-    padding: 10px;
-    width: 20px;
     background-color: #ff0055;
     color: white;
 }
