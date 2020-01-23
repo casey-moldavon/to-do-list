@@ -9,7 +9,6 @@ body {
     margin: 0;
 }
 
-
 .container {
     background-color: white;
     text-align: center;
@@ -21,11 +20,17 @@ body {
     margin-top: 100px;
 
     opacity: 0.9;
+
+    font-family: cursive;
+    font-weight: 900;
+    font-size: 20px;
 }
 
     .mini-heading {
-        font-weight: bold;
         margin-top: 10%;
+        font-family: cursive;
+        font-weight: bold;
+        font-size: 27px;
     }
 
     .task-container {

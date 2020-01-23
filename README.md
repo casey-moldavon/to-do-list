@@ -51,7 +51,11 @@ as the image below displays, the correct syntax involves "affectedRows" where i 
 
 Styling for me tends to be the easiest part as i really enjoy it. Per the usual, i wanted a simple design with an interesting background and related coloring within the main content display. This time i decided to use a little bit of Bootstrap to make things easier but still incorporated a lot of css styling to give it the look i wanted. As always, the only styling challenge i encountered was with screen sizing to for moble versions but this didn't prove too dificult when using a bootstrap container. Will probably start using intuitive outside styling like this in the future.
 
+My final challenge came when deploying the app on Heroku. There were many steps involved and complexities when adding a database/connecting to mysql workbench. HUGE THANK YOU to my class TA Kerwin who helped me through this process.
+
 And thats my App!
+
+Closing statement: This project was quite a challenge. As per the usual, i was completely unaware until the due day that a majority of the content had actually been provided but, having writen everything out myself, i suppose i'll retain more of what i did here in the end. I learned a lot and i look forward to utilizing this knowledge in future projects.
 
 
 ## Built With
@@ -69,7 +73,7 @@ And thats my App!
 * **Casey Moldavon** 
 
 For live Demo...
-- [Live Heroku app]()
+- [Live Heroku app](https://casey-bucket-list.herokuapp.com/)
 ​
 - [Link to Portfolio Site](https://casey-moldavon.github.io/updated-portfolio-page/)
 - [Link to Github](https://github.com/casey-moldavon/to-do-list)
@@ -83,4 +87,4 @@ This project is licensed under the MIT License
 ​
 ## Acknowledgments
 ​
-* Big thanks to my class TA Kerwin who helped me through a complex issue with my project (Adding tasks and sorting my CRUD Create function). His help along with a very brief but helpful glance at code belonging to a classmate (Chris Melby) helped me finish the functionality of the project. As always, a big thanks the class isntructor Jerome Chenette and my husband Teddy (who supports me and puts up with my constant studying).
+* HUGE thanks to my class TA Kerwin who helped me through a complex issue with my project (Adding tasks and sorting my CRUD Create function) and deploying on Heroku. His help along with a very brief but helpful glance at code belonging to a classmate (Chris Melby) helped me finish the functionality of the project. As always, a big thanks the class isntructor Jerome Chenette and my husband Teddy (who supports me and puts up with my constant studying).
