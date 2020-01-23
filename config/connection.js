@@ -13,6 +13,15 @@ connection.connect(function(err){
         console.error(" Error connecting: " + err.stack);
         return;
     }
+    else {
+        connection = mysql.createConnection({
+            host: "qbct6vwi8q648mrn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+            user: "esjyuugvnpdnxw83",
+            password: "	oexnd1i79xdr1j2c",
+            port: 3306,
+            database: "kusl7gy4a0fz2yyj"
+        });
+    }
     console.log("Connection as id: " + connection.threadId);
 });
 
